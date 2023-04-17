@@ -87,10 +87,10 @@ packages:
     dependency: "direct main"
     description:
       name: http_interceptor
-      sha256: "5f3dde028e67789339c250252c09510a74aff21ce16b06d07d9096bda6582bab"
+      sha256: "05faa5b238e0635dc108d3d2e3cfcc6c09f6fe78c170eab8dc926394c89014ea"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.2"
+    version: "0.4.0"
   http_parser:
     dependency: transitive
     description:
