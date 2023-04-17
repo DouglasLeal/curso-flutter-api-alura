@@ -52,7 +52,7 @@ class _ContactsListState extends State<ContactsList> {
                     onClick: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => TransactionForm(),
+                          builder: (context) => TransactionForm(contact),
                         ),
                       );
                     },
