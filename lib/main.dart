@@ -1,3 +1,4 @@
+import 'package:api/pages/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,12 +11,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: Colors.green[900],
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.green[900],
           secondary: Colors.blueAccent[700],
         ),
-    ));
+    ),
+      home: const Dashboard(),
+    );
   }
 }
