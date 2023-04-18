@@ -50,7 +50,8 @@ class _TransactionFormState extends State<TransactionForm> {
                   controller: _valueController,
                   style: const TextStyle(fontSize: 24.0),
                   decoration: const InputDecoration(labelText: 'Value'),
-                  keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                  keyboardType:
+                      const TextInputType.numberWithOptions(decimal: true),
                 ),
               ),
               Padding(
@@ -58,19 +59,18 @@ class _TransactionFormState extends State<TransactionForm> {
                 child: SizedBox(
                   width: double.maxFinite,
                   child: ElevatedButton(
-                    child: const Text('Transfer'), onPressed: () {
-                    print("--------- TESTE -------------");
-
-                      final double? value = double.tryParse(_valueController.text);
-                    final transactionCreated = Transaction(value!, widget.contact);
-                    _webClient.save(transactionCreated).then((transaction) {
-                      print("teste2 ----------------");
-                      print(transaction);
-                      if(transaction != null){
-                        Navigator.pop(context);
-                      }
-                    });
-                  },
+                    child: const Text('Transfer'),
+                    onPressed: () {
+                      final double? value =
+                          double.tryParse(_valueController.text);
+                      final transactionCreated =
+                          Transaction(value!, widget.contact);
+                      _webClient.save(transactionCreated, "password").then((transaction) {
+                        if (transaction != null) {
+                          Navigator.pop(context);
+                        }
+                      });
+                    },
                   ),
                 ),
               )
