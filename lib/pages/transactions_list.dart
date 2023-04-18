@@ -17,12 +17,11 @@ class TransactionsList extends StatelessWidget {
       body: FutureBuilder<List<Transaction>>(
         future: _webClient.findAll(),
         builder: (context, snapshot) {
-          switch (snapshot.connectionState) {
+           switch (snapshot.connectionState) {
             case ConnectionState.none:
               break;
             case ConnectionState.waiting:
               return const Progress();
-              break;
             case ConnectionState.active:
               break;
             case ConnectionState.done:
@@ -62,7 +61,6 @@ class TransactionsList extends StatelessWidget {
               );
               break;
           }
-
           return const CenteredMessage('Unknown error');
         },
       ),

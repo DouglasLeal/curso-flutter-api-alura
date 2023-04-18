@@ -8,11 +8,14 @@ import 'package:http_interceptor/http_interceptor.dart';
 class TransactionWebClient{
   Future<List<Transaction>> findAll() async {
     final Response response =
-    await client.get(baseUrl.toUri()).timeout(Duration(seconds: 5));
+    await client.get(baseUrl.toUri()).timeout(const Duration(seconds: 5));
     final List<dynamic> decodedJson = jsonDecode(response.body);
-    return decodedJson
+
+    var list = decodedJson
         .map((dynamic json) => Transaction.fromJson(json))
         .toList();
+
+    return list;
   }
 
   Future<Transaction> save(Transaction transaction) async {

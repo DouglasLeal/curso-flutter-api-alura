@@ -7,4 +7,4 @@ final Client client = HttpClientWithInterceptor.build(
     interceptors: [LoggingInterceptor()],
 );
 
-const String baseUrl = "http://192.168.15.7:3000/transactions";
+const String baseUrl = "http://192.168.15.7:3000";
