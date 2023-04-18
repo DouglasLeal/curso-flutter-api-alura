@@ -27,7 +27,7 @@ class TransactionWebClient {
         },
         body: transactionJson);
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 201) {
       return Transaction.fromJson(jsonDecode(response.body));
     }
 

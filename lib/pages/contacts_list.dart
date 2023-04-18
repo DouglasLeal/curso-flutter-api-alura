@@ -31,7 +31,7 @@ class _ContactsListState extends State<ContactsList> {
         child: const Icon(Icons.add),
       ),
       body: FutureBuilder<List<Contact>>(
-        initialData: [],
+        initialData: List.empty(),
         future: _dao.findAll(),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
